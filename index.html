@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TB Vaskeliste Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/fd55544369.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <button id="btnReset" name="btnReset">reset</button>
+
+    <form id="formStraff" class="editForm">
+      <label for="inpStraff">Rom: </label>
+      <input type="number" name="inpStraff" min="201" max="616" step="1" placeholder="000" required>
+      <button type="submit" id="btnStraff" name="btnStraff">legg til straffevask</button>
+    </form>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebase/7.18.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDLG8Bt-Qf75ZjAbQcffnvRMEmY5xep-Q0",
+      authDomain: "tb-vaskedager.firebaseapp.com",
+      databaseURL: "https://tb-vaskedager.firebaseio.com",
+      projectId: "tb-vaskedager",
+      storageBucket: "tb-vaskedager.appspot.com",
+      messagingSenderId: "218542819399",
+      appId: "1:218542819399:web:6fd3c6fa907396b650c962",
+      measurementId: "G-2XSK93W3KT"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // firebase.analytics();
+  </script>
+
+  <script src="scripts.js"></script>
+
+  </body>
+</html>
