@@ -8,6 +8,35 @@
   </head>
   <body>
 
+    <header>
+      <a href="#">tb vaskeliste maker</a>
+    </header>
+
+    <div class="sidebar">
+      <ul>
+        <li><a href="#">registrer ubebodde rom</a></li>
+        <li><a href="#">registrer overskuddsvask</a></li>
+        <li><a href="#">registrer straffevask</a></li>
+        <li><a href="#" class="table-action-link">lag vaskeliste</a></li>
+        <li><a href="#" class="table-action-link">eksporter vaskeliste</a></li>
+        <!-- <li><a href="#" class="last-link">reset all data</a></li> -->
+        <li><button id="btnReset" name="btnReset" class="btnReset">reset all data</button></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="ubebodde">
+        <h1>registrer ubebodde rom</h1>
+        <p>Skriv inn alle romnummer som er ubebodde, separert ved komma.</p>
+        <form id="formUbebodde" class="space-top">
+          <label for="inpUbebodde">Rom:</label>
+          <input type="text" id="inpUbebodde" name="inpUbebodde" placeholder="000, 000, 000">
+          <button type="button" class="btnForm" name="btnUbebodde">registrer</button>
+        </form>
+      </div>
+    </div>
+
+    <!--
     <button id="btnReset" name="btnReset">reset</button>
 
     <form id="formStraff" class="editForm">
@@ -15,6 +44,7 @@
       <input type="number" name="inpStraff" min="201" max="616" step="1" placeholder="000" required>
       <button type="submit" id="btnStraff" name="btnStraff">legg til straffevask</button>
     </form>
+  -->
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->

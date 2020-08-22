@@ -4,6 +4,7 @@
   --heading-ff-ss-2: 'Montserrat', sans-serif;
   --heading-ff-ss-3: 'Quicksand', sans-serif;
   --heading-ff-ss-4: 'Nunito', sans-serif;
+  --heading-ff-ss-5: 'Poppins', sans-serif;
   --heading-ff-s-1: 'Lora', serif;
   --heading-ff-s-2: 'Playfair Display', serif;
   --heading-ff-s-3: 'Old Standard TT', serif;
@@ -77,32 +78,61 @@
 
 body {
   width: 100vw;
-  background: var(--gray-lighter);
+  background: var(--almost-white);
 
   display: flex;
-  flex-flow: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
+  flex-flow: row;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+header {
+  width: 100%;
+  height: auto;
+
+  padding: calc(var(--space)*4)
+           calc(var(--space)*2)
+           calc(var(--space)*2)
+           calc(var(--space)*4);
+  background: transparent;
+  /* border-bottom: calc(var(--space)*0.2) solid var(--gray-lighter); */
+
+  position: absolute;
+}
+
+header a {
+  font-family: var(--heading-ff-ss-5);
+  font-weight: bold;
+  font-style: normal;
+  font-size: 2rem;
+
+  color: var(--almost-black);
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  letter-spacing: calc(var(--space)*0.15);
 }
 
 button {
   width: auto;
   height: auto;
 
-  margin-top: calc(var(--space)*10);
+  /* margin-top: calc(var(--space)*10); */
   padding: calc(var(--space)*0.5) var(--space);
 
-  background: var(--blue);
+  background: transparent;
   border: none;
-  border-radius: calc(var(--space)*0.5);
+  border-radius: calc(var(--space)*0.3);
 
-  font-family: var(--main-ff-ss-1);
+  font-family: var(--main-ff-ss-3);
   font-weight: normal;
   font-style: normal;
   font-size: 2rem;
 
-  color: var(--almost-white);
+  color: var(--almost-black);
 
   text-align: center;
   text-decoration: none;
@@ -112,6 +142,10 @@ button {
 
 form label,
 form input {
+  margin: 0
+          calc(var(--space)*1.25)
+          0
+          0;
   font-family: var(--main-ff-ss-1);
   font-weight: normal;
   font-style: normal;
@@ -121,4 +155,155 @@ form input {
 
   text-align: center;
   text-decoration: none;
+}
+
+h1 {
+  padding-bottom: calc(var(--space)*2);
+
+  font-family: var(--heading-ff-ss-5);
+  font-weight: bold;
+  font-style: normal;
+  font-size: 2rem;
+
+  color: var(--almost-black);
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+
+  letter-spacing: calc(var(--space)*0.15);
+}
+
+p {
+  font-family: var(--main-ff-ss-3);
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+
+  color: var(--almost-black);
+
+  text-align: center;
+  text-decoration: none;
+}
+
+h1::first-letter {
+  text-transform: uppercase;
+}
+
+.space-top {
+  padding-top: calc(var(--space)*2);
+}
+
+.sidebar {
+  width: 20vw;
+  height: 100vh;
+
+  padding: calc(var(--space)*9)
+           calc(var(--space)*2)
+           calc(var(--space)*2)
+           calc(var(--space)*2);
+
+  background: transparent;
+  /* border-right: 1px solid var(--gray-lighter); */
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  width: 100%;
+  height: auto;
+
+  padding: calc(var(--space)*2);
+  /* border: 1px solid red; */
+
+  transition: var(--smooth);
+}
+
+.sidebar ul li::first-letter {
+  text-transform: uppercase;
+}
+
+.sidebar ul li a {
+  font-family: var(--main-ff-ss-3);
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+
+  color: var(--almost-black);
+
+  text-align: center;
+  text-decoration: none;
+
+  transition: var(--smooth);
+}
+
+.sidebar ul li a:hover {
+  color: blue;
+}
+
+.table-action-link {
+  padding: calc(var(--space)*0.5) var(--space);
+
+  background: var(--yellow);
+  border-radius: calc(var(--space)*0.3);
+}
+
+.last-link {
+  font-size: 0.5rem;
+
+  color: red;
+}
+
+.btnReset {
+  margin-top: calc(var(--space)*10);
+
+  background: var(--red);
+
+  font-family: var(--main-ff-ss-3);
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1rem;
+
+  color: var(--almost-white);
+
+  text-align: center;
+  text-decoration: none;
+
+  transition: var(--smooth);
+
+  position: absolute;
+}
+
+.btnForm {
+  padding: calc(var(--space)*0.5) var(--space);
+
+  background: var(--blue);
+
+  color: var(--almost-white);
+}
+
+.btnReset::first-letter,
+.btnForm::first-letter {
+  text-transform: uppercase;
+}
+
+.content {
+  width: 80vw;
+  height: 100vh;
+
+  padding: calc(var(--space)*11)
+           calc(var(--space)*2)
+           calc(var(--space)*2)
+           calc(var(--space)*2);
+
+  background: transparent;
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  align-content: flex-start;
+  justify-content: flex-start;
 }

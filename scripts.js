@@ -46,8 +46,8 @@ function resetData(event) {
     // reset overskudd & straff
     for (i; i <= upperBound; i++) {
       floorsDb[floorDbIndex].child(i).set({
-        'overskudd': 0,
-        'straff': 0
+        overskudd: 0,
+        straff: 0
       });
     }
 
@@ -57,25 +57,35 @@ function resetData(event) {
 
 }
 
-function addStraff(event, snapshot) {
-  event.preventDefault();
+function getRoomData(snapshot) {
+  console.log('getRoomData');
 
   let roomNum = Number(formStraff.querySelector('input').value);
   let floor = Number(formStraff.querySelector('input').value[0]);
+  let room;
+  let roomData = snapshot.val();
 
   floorsNum.forEach((floorNum) => {
     if (floor == floorNum) {
       let floorDb = floorsDb[floorsNum.indexOf(floor)];
 
-      //
+      room = floorDb.child(roomNum);
+      // let roomData = snapshot.val();
 
-      // console.log(`floorDb: ${floorDb}`);
+      console.log(`floorDb: ${floorDb}`);
+      console.log(`roomData: ${roomData}`);
     }
   });
-
 
   console.log(`addStraff to ${room} at floor ${floor}`);
 }
 
+function addStraff(event) {
+  event.preventDefault();
+
+  console.log('addStraff');
+}
+
 btnReset.addEventListener('click', resetData);
 formStraff.addEventListener('submit', addStraff);
+formStraff.addEventListener('change', getRoomData);
