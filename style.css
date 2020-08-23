@@ -307,3 +307,7 @@ h1::first-letter {
   align-content: flex-start;
   justify-content: flex-start;
 }
+
+.hide {
+  display: none;
+}

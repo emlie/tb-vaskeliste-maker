@@ -14,18 +14,18 @@
 
     <div class="sidebar">
       <ul>
-        <li><a href="#">registrer ubebodde rom</a></li>
-        <li><a href="#">registrer overskuddsvask</a></li>
-        <li><a href="#">registrer straffevask</a></li>
-        <li><a href="#" class="table-action-link">lag vaskeliste</a></li>
-        <li><a href="#" class="table-action-link">eksporter vaskeliste</a></li>
+        <li><a href="#" id="a-ubebodde" class="side-a">registrer ubebodde rom</a></li>
+        <li><a href="#" id="a-overskudd" class="side-a">registrer overskuddsvask</a></li>
+        <li><a href="#" id="a-straff" class="side-a">registrer straffevask</a></li>
+        <li><a href="#"  id="a-make" class="side-a table-action-link">lag vaskeliste</a></li>
+        <li><a href="#"  id="a-export" class="side-a table-action-link">eksporter vaskeliste</a></li>
         <!-- <li><a href="#" class="last-link">reset all data</a></li> -->
         <li><button id="btnReset" name="btnReset" class="btnReset">reset all data</button></li>
       </ul>
     </div>
 
     <div class="content">
-      <div class="ubebodde">
+      <div id="el-ubebodde" class="subcontent hide">
         <h1>registrer ubebodde rom</h1>
         <p>Skriv inn alle romnummer som er ubebodde, separert ved komma.</p>
         <form id="formUbebodde" class="space-top">
@@ -33,6 +33,36 @@
           <input type="text" id="inpUbebodde" name="inpUbebodde" placeholder="000, 000, 000">
           <button type="button" class="btnForm" name="btnUbebodde">registrer</button>
         </form>
+      </div>
+
+      <div id="el-overskudd" class="subcontent hide">
+        <h1>registrer overskuddsvask</h1>
+        <p>Skriv inn romnummeret til den som har opptjent en overskuddsvask.</p>
+        <form id="formOverskudd" class="space-top">
+          <label for="inpOverskudd">Rom:</label>
+          <input type="number" id="inpOverskudd" name="inpOverskudd" placeholder="000" min="201" max="616", step="1">
+          <button type="button" class="btnForm" name="btnOverskudd">registrer</button>
+        </form>
+      </div>
+
+      <div id="el-straff" class="subcontent hide">
+        <h1>registrer straffevask</h1>
+        <p>Skriv inn romnummeret til den som har opptjent en straffevask.</p>
+        <form id="formStraff" class="space-top">
+          <label for="inpStraff">Rom:</label>
+          <input type="number" id="inpStraff" name="inpStraff" placeholder="000" min="201" max="616", step="1">
+          <button type="button" class="btnForm" name="btnStraff">registrer</button>
+        </form>
+      </div>
+
+      <div id="el-make" class="subcontent hide">
+        <h1>ny vaskeliste</h1>
+        <p>Få vaskelista som PDF ved å trykke på knappen i sidemenye.</p>
+        <table>
+          <thead>
+            <th></th>
+          </thead>
+        </table>
       </div>
     </div>
 

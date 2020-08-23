@@ -1,6 +1,10 @@
 // jsversion: 6
 
 /* –––––––––––––––––––––––––– GET HTML ELEMENTS –––––––––––––––––––––––––– */
+let allSideLinks = document.querySelectorAll('.side-a');
+let linkMake = document.querySelector('#a-make');
+let elContent = document.querySelector('.content');
+let allSubcontent = document.querySelectorAll('.subcontent');
 let formStraff = document.querySelector('#formStraff');
 let btnStraff = document.querySelector('#btnStraff');
 
@@ -45,6 +49,10 @@ function resetData(event) {
     // primary key is room number
     // reset overskudd & straff
     for (i; i <= upperBound; i++) {
+      // delete old data
+      floorsDb[floorDbIndex].child(i).remove();
+
+      // add new data
       floorsDb[floorDbIndex].child(i).set({
         overskudd: 0,
         straff: 0
@@ -86,6 +94,34 @@ function addStraff(event) {
   console.log('addStraff');
 }
 
+function toggleContent() {
+  let thisLink = this.id;
+  let thisName = thisLink.substr(2, thisLink.length - 1);
+  let thisId = `#el-${thisName}`;
+  let correspondingElement = document.querySelector(`${thisId}`);
+  let hideClass = 'hide';
+
+  allSubcontent.forEach((subcontent) => {
+    if (subcontent.id !== thisId) {
+      subcontent.classList.add(hideClass);
+    }
+  });
+
+
+  correspondingElement.classList.toggle(hideClass);
+
+  console.log(`toggle: ${thisLink} with ${thisId}`);
+}
+
+function makeVaskeliste() {
+  console.log('make vaskeliste');
+}
+
+allSideLinks.forEach((a) => {
+  a.addEventListener('click', toggleContent);
+});
+
 btnReset.addEventListener('click', resetData);
-formStraff.addEventListener('submit', addStraff);
-formStraff.addEventListener('change', getRoomData);
+linkMake.addEventListener('click', makeVaskeliste);
+// formStraff.addEventListener('submit', addStraff);
+// formStraff.addEventListener('change', getRoomData);
