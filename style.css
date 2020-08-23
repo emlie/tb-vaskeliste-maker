@@ -174,6 +174,10 @@ h1 {
   letter-spacing: calc(var(--space)*0.15);
 }
 
+h1::first-letter {
+  text-transform: uppercase;
+}
+
 p {
   font-family: var(--main-ff-ss-3);
   font-weight: normal;
@@ -186,8 +190,57 @@ p {
   text-decoration: none;
 }
 
-h1::first-letter {
+table {
+  width: 50vw;
+  height: auto;
+
+  padding: calc(var(--space)*0.5)
+           calc(var(--space)*0.5)
+           calc(var(--space)*0)
+           calc(var(--space)*0.5);
+
+  /* border: 1px solid red; */
+
+  font-family: var(--main-ff-ss-3);
+  font-weight: normal;
+  font-style: normal;
+
+  color: var(--almost-black);
+
+  text-align: left;
+  text-decoration: none;
+}
+
+table thead {
+  background: pink;
+}
+
+table thead th {
+  padding: calc(var(--space)*0.25)
+           calc(var(--space)*0.5);
+
+  /* border-bottom: 1px solid blue; */
+
+  font-family: inherit;
+  font-size: 2rem;
+}
+
+table thead th::first-letter {
   text-transform: uppercase;
+}
+
+table tbody tr td {
+  padding: calc(var(--space)*0.25)
+           calc(var(--space)*0.5);
+
+  /* border-bottom: 1px solid var(--almost-black); */
+
+  font-family: inherit;
+  font-size: 2rem;
+}
+
+.margin-top {
+  margin-top: calc(var(--space)*2);
 }
 
 .space-top {
@@ -310,4 +363,25 @@ h1::first-letter {
 
 .hide {
   display: none;
+}
+
+.gray-back {
+  background: var(--gray);
+}
+
+.pink-back {
+  background: pink;
+}
+
+.yellow-back {
+  background: yellow;
+}
+
+.border-top-bottom {
+  border-top: 1px solid var(--almost-black);
+  border-bottom: 1px solid var(--almost-black);
+}
+
+.bold-border-bottom {
+  border-bottom: 5px solid var(--almost-black);
 }

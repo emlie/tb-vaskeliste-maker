@@ -7,6 +7,7 @@ let elContent = document.querySelector('.content');
 let allSubcontent = document.querySelectorAll('.subcontent');
 let formStraff = document.querySelector('#formStraff');
 let btnStraff = document.querySelector('#btnStraff');
+let tbody = document.querySelector('tbody');
 
 let db = firebase.database();
 let floorsNum = [2, 3, 4, 5, 6];
@@ -114,6 +115,61 @@ function toggleContent() {
 }
 
 function makeVaskeliste() {
+  let numWeeks = 3;
+  let allDays = [
+    'mandag',
+    'tirsdag',
+    'onsdag',
+    'torsdag',
+    'fredag',
+    'lørdag',
+    'søndag'
+  ];
+
+  // console.log(allTableRows);
+
+  // fill table
+  // tbody.innerHTML += `d`;
+  for (let i = 0; i < numWeeks; i++) {
+    allDays.forEach((day) => {
+      tbody.innerHTML += `
+      <tr>
+        <td>${day}</td>
+        <td>12.09.2020</td>
+        <td>201</td>
+        <td><!-- empty --></td>
+        <td><!-- empty --></td>
+        <td><!-- empty --></td>
+      </tr>
+      <tr>
+        <td class="border-top-bottom"><!-- empty --></td>
+        <td class="border-top-bottom"><!-- empty --></td>
+        <td class="border-top-bottom">202</td>
+        <td class="border-top-bottom"><!-- empty --></td>
+        <td class="border-top-bottom"><!-- empty --></td>
+        <td class="border-top-bottom"><!-- empty --></td>
+      </tr>
+      `;
+    });
+  }
+
+  let allTableRows = document.querySelectorAll('tr');
+
+  // every other row is dark gray
+  for (let i = 0; i < allTableRows.length; i++) {
+    if (i % 2 == 0) {
+      allTableRows[i].classList.add('gray-back');
+    }
+
+    if (allTableRows[i].firstElementChild.innerHTML == 'søndag') {
+      allTableRows[i].classList.add('yellow-back');
+      allTableRows[i].classList.add('bold-border-bottom');
+    }
+  }
+
+  // style thead
+  allTableRows[0].classList.add('pink-back');
+
   console.log('make vaskeliste');
 }
 
