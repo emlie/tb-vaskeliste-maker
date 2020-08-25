@@ -9,7 +9,7 @@
   <body>
 
     <header>
-      <a href="#">tb vaskeliste maker</a>
+      <a href="#" id="a-howto" class="side-a">tb vaskeliste maker</a>
     </header>
 
     <div class="sidebar">
@@ -18,13 +18,23 @@
         <li><a href="#" id="a-overskudd" class="side-a">registrer overskuddsvask</a></li>
         <li><a href="#" id="a-straff" class="side-a">registrer straffevask</a></li>
         <li><a href="#"  id="a-make" class="side-a table-action-link">lag vaskeliste</a></li>
-        <li><a href="#"  id="a-export" class="side-a table-action-link">eksporter vaskeliste</a></li>
+        <li><a href="#"  id="a-export" class="table-action-link">eksporter vaskeliste</a></li>
         <!-- <li><a href="#" class="last-link">reset all data</a></li> -->
         <li><button id="btnReset" name="btnReset" class="btnReset">reset all data</button></li>
       </ul>
     </div>
 
     <div class="content">
+      <div id="el-howto" class="subcontent">
+        <h1>Hvordan lage en ny vakseliste</h1>
+        <!-- <p>Hvordan lage en nye vakseliste</p> -->
+        <ol>
+          <li>Registrer ny data</li>
+          <li>Skriv inn nedenfor hvilket romnummer den nye vaskeperioden skal starte med</li>
+          <li>Velg "Lag ny vaskeliste"</li>
+        </ol>
+      </div>
+
       <div id="el-ubebodde" class="subcontent hide">
         <h1>registrer ubebodde rom</h1>
         <p>Skriv inn alle romnummer som er ubebodde, separert ved komma.</p>
@@ -55,11 +65,10 @@
         </form>
       </div>
 
-      <div id="el-make" class="subcontent">
-        <h1>ny vaskeliste</h1>
-        <p>Få vaskelista som PDF ved å trykke på knappen i sidemenye.</p>
+      <div id="el-make" class="subcontent hide">
+        <h1>Ny vaskeliste</h1>
         <table class="margin-top">
-          <thead>
+          <thead class="gray-darker-back">
             <th>dag</th>
             <th>dato</th>
             <th>rom</th>

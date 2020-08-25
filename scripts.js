@@ -3,10 +3,13 @@
 /* –––––––––––––––––––––––––– GET HTML ELEMENTS –––––––––––––––––––––––––– */
 let allSideLinks = document.querySelectorAll('.side-a');
 let linkMake = document.querySelector('#a-make');
+let linkExport = document.querySelector('#a-export');
 let elContent = document.querySelector('.content');
 let allSubcontent = document.querySelectorAll('.subcontent');
 let formStraff = document.querySelector('#formStraff');
 let btnStraff = document.querySelector('#btnStraff');
+let table = document.querySelector('table');
+let tableContent = document.querySelector('table').innerHTML;
 let tbody = document.querySelector('tbody');
 
 let db = firebase.database();
@@ -128,6 +131,8 @@ function makeVaskeliste() {
 
   // console.log(allTableRows);
 
+  table.classList.remove('hide');
+
   // fill table
   // tbody.innerHTML += `d`;
   for (let i = 0; i < numWeeks; i++) {
@@ -168,9 +173,33 @@ function makeVaskeliste() {
   }
 
   // style thead
-  allTableRows[0].classList.add('pink-back');
+  allTableRows[0].classList.add('gray-darker-back');
 
   console.log('make vaskeliste');
+}
+
+function exportPDF() {
+  let style = "<style>";
+  style += "table {width: 100%;font: 17px Calibri;}";
+  style += "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+  style += "padding: 2px 3px;text-align: center;}";
+  style += "</style>";
+
+  let win = window.open('', '', 'height=700,width=700');
+
+  win.document.write('<html><head>');
+  win.document.write('<title>Uke 35</title>');   // <title> FOR PDF HEADER.
+  win.document.write(style);          // ADD STYLE INSIDE THE HEAD TAG.
+  win.document.write('</head>');
+  win.document.write('<body>');
+  win.document.write(tableContent);         // THE TABLE CONTENTS INSIDE THE BODY TAG.
+  win.document.write('</body></html>');
+
+  win.document.close(); 	// CLOSE THE CURRENT WINDOW.
+
+  win.print();    // PRINT THE CONTENTS.
+
+  console.log('export table to PDF');
 }
 
 allSideLinks.forEach((a) => {
@@ -179,5 +208,6 @@ allSideLinks.forEach((a) => {
 
 btnReset.addEventListener('click', resetData);
 linkMake.addEventListener('click', makeVaskeliste);
+linkExport.addEventListener('click', exportPDF);
 // formStraff.addEventListener('submit', addStraff);
 // formStraff.addEventListener('change', getRoomData);

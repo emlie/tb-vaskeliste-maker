@@ -190,6 +190,18 @@ p {
   text-decoration: none;
 }
 
+ol li {
+  font-family: var(--main-ff-ss-3);
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+
+  color: var(--almost-black);
+
+  text-align: left;
+  text-decoration: none;
+}
+
 table {
   width: 50vw;
   height: auto;
@@ -211,18 +223,18 @@ table {
   text-decoration: none;
 }
 
-table thead {
-  background: pink;
-}
-
 table thead th {
   padding: calc(var(--space)*0.25)
            calc(var(--space)*0.5);
 
-  /* border-bottom: 1px solid blue; */
+  border-bottom: 1px solid var(--almost-black);
 
   font-family: inherit;
   font-size: 2rem;
+
+  color: var(--almost-white);
+
+  letter-spacing: calc(var(--space)*0.15);
 }
 
 table thead th::first-letter {
@@ -367,6 +379,12 @@ table tbody tr td {
 
 .gray-back {
   background: var(--gray);
+}
+
+.gray-darker-back {
+  background: var(--gray-darker);
+
+  color: var(--almost-white);
 }
 
 .pink-back {
